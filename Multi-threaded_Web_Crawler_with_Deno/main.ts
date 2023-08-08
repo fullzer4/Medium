@@ -1,6 +1,13 @@
-const worker = new Worker(new URL("./worker.ts", import.meta.url).href, {
-  type: "module",
-});
+import { readLines } from "https://deno.land/std@0.197.0/io/read_lines.ts"
+import * as path from "https://deno.land/std@0.197.0/path/mod.ts"
 
-worker.postMessage({ url: "https://github.com/fullzer4" });
-worker.postMessage({ url: "https://github.com/brunobandeiraf" })
+const NWorker = 2
+
+const workers: Worker[] = []
+
+const filename = path.join(Deno.cwd(), "./accounts.txt")
+const fileReader = await Deno.open(filename)
+
+for await (const line of readLines(fileReader)) {
+
+}
