@@ -22,5 +22,6 @@ self.onmessage = async (e: { data: { url: string; filename: string; }; }) => {
 
   writeJson(filename, text)
 
+  
   self.close()
 };

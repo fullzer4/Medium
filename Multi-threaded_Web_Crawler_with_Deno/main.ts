@@ -9,5 +9,5 @@ const filename = path.join(Deno.cwd(), "./accounts.txt")
 const fileReader = await Deno.open(filename)
 
 for await (const line of readLines(fileReader)) {
-
+    
 }
